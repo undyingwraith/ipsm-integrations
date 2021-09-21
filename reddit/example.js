@@ -19,5 +19,6 @@ if (!fs.existsSync(ID_FILE)) {
 
 const integration = new IpsmRedditIntegration(ipfs, id)
 
-integration.registerLink('ipfs', 'ipfs')
+integration.registerLink('ipfs', 'r/ipfs')
+integration.registerLink('IPFS_Hashes', 'r/IPFS_Hashes')
 integration.update()

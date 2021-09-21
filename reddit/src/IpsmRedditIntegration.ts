@@ -21,15 +21,12 @@ export class IpsmRedditIntegration {
         for (let sub of Object.keys(this.links)) {
             this.fetchService.fetchFeed(sub).then(async posts => {
                 for (let post of posts) {
+                    //TODO: check if post already exists
                     await this.ipsm.postToBoard(this.links[sub], {
                         content: [
                             {
-                                mime: 'text/plain',
-                                data: post.title
-                            },
-                            {
-                                mime: 'text/plain',
-                                data: post.author
+                                mime: 'text/html',
+                                data: `<h1>${post.title}</h1>`
                             },
                             {
                                 mime: 'text/html',
