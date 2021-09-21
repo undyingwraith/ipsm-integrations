@@ -1,0 +1,24 @@
+{
+  "name": "ipsm-reddit-integration",
+  "version": "0.1.0",
+  "description": "Tool to repost stuff from reddit on ipsm",
+  "main": "dist",
+  "repository": "https://github.com/undyingwraith/ipsm-integrations",
+  "author": "Undying Wraith",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "tsc && node ./example.js"
+  },
+  "dependencies": {
+    "@undyingwraith/ipsm-core": "0.1.4",
+    "ipfs-http-client": "^52.0.5",
+    "node-rsa": "^1.1.1",
+    "rss-parser": "3.12.0"
+  },
+  "devDependencies": {
+    "@types/node-rsa": "^1.1.1",
+    "typescript": "^4.4.3"
+  }
+}
