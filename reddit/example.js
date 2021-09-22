@@ -1,6 +1,7 @@
 const {IpsmRedditIntegration} = require('./dist/index.js')
 const {create} = require("ipfs-http-client");
 const NodeRSA = require("node-rsa");
+const cron = require("node-cron");
 const fs = require('fs')
 
 const ID_FILE = './identity.pem'
@@ -21,4 +22,9 @@ const integration = new IpsmRedditIntegration(ipfs, id)
 
 integration.registerLink('ipfs', 'r/ipfs')
 integration.registerLink('IPFS_Hashes', 'r/IPFS_Hashes')
+
 integration.update()
+
+cron.schedule('*/12 * * * *', () => {
+    integration.update()
+})
